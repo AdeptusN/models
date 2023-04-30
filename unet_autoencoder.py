@@ -9,7 +9,7 @@ from AdeptusN.modules.conv_modules import Conv3x3, Conv5x5
 class UNetAutoencoder(nn.Module):
     """Autoencoder with skip connections."""
 
-    def __init__(self, in_channels=22, out_channels=3):
+    def __init__(self, in_channels=3, out_channels=3):
         super(UNetAutoencoder, self).__init__()
 
         self.max_pool = nn.MaxPool2d(kernel_size=2, stride=2)
