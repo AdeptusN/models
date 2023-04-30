@@ -5,10 +5,10 @@ Repository of NN models by AdeptusN
 Autoencoder with 5 downscale and upscale layers. Might be turned into variational autoencoder.
 
     Autoencoder(
-        in_channels=3,                    #number of input channels
-        out_channels=3,                   #number of output channels
-        latent_dim=200,                   #latent dimension size
-        variational=False                 #turn into variational
+        in_channels=3,                     #number of input channels
+        out_channels=3,                    #number of output channels
+        latent_dim=200,                    #latent dimension size
+        variational=False                  #turn into variational
     )
 
 ## unet_autoencoder.py
