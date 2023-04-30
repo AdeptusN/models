@@ -1,2 +1,2 @@
 # models
- models for adetus
+Repository of NN models by AdeptusN
