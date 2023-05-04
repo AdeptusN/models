@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 
-from AdeptusN.modules.conv_modules import Conv3x3, Conv5x5
+from adeptus_modules.conv_modules import Conv3x3, Conv5x5
 
 
 class Autoencoder(nn.Module):
