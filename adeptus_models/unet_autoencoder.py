@@ -7,9 +7,17 @@ from adeptus_modules.conv_modules import Conv3x3, Conv5x5
 
 
 class UNetAutoencoder(nn.Module):
-    """Autoencoder with skip connections."""
+    """
+    Autoencoder based on UNet architecture
+    """
 
     def __init__(self, in_channels=3, out_channels=3):
+        """
+        Args:
+            in_channels: num of input channels
+            out_channels: num of output channels
+        """
+
         super(UNetAutoencoder, self).__init__()
 
         self.max_pool = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -45,23 +53,12 @@ class UNetAutoencoder(nn.Module):
             Conv5x5(in_channels=32, out_channels=32, batch_norm=True, activation_func=nn.ReLU())
         )
 
-        # self.final_conv = Conv3x3(in_channels=32, out_channels=out_channels,
-        #                           batch_norm=True, activation_func=nn.Tanh())
-
         self.final_conv = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=out_channels, kernel_size=1),
             nn.Sigmoid()
         )
 
     def forward(self, x):
-        """
-        Forward propagation method of neural network.
-        Args:
-            x: mini-batch of data
-
-        Returns:
-            Data from latent representation of autoencoder.
-        """
         skip_connections = []
 
         out = self.conv_module1(x)
@@ -110,6 +107,3 @@ class UNetAutoencoder(nn.Module):
 
         return out
 
-    @staticmethod
-    def load():
-        pass
