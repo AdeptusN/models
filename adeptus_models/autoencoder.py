@@ -63,9 +63,6 @@ class Autoencoder(nn.Module):
             Conv5x5(in_channels=32, out_channels=out_channels, batch_norm=True, activation_func=nn.ReLU())
         )
 
-        # self.final_conv = Conv3x3(in_channels=32, out_channels=out_channels,
-        #                           batch_norm=True, activation_func=nn.ReLU())
-
     def _encode(self, x):
         x = self.conv_module1(x)
         x = self.max_pool(x)
